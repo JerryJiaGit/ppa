@@ -33,7 +33,8 @@
   
   make sure your smpt email acount is okay to use, here I am using my qq email acount which request another password from email website settings
 
-2. Preparing before running
+
+2. Preparing lib before running
 
   $sudo apt-get install python3-pip
   
