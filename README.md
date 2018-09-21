@@ -22,26 +22,27 @@ SW Installation:
   
   after boot into raspbian, setup wifi 
   
-  sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
-  
+  $sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
 
   check USB MIC sound card
   
-  sudo alsamixer
+  $sudo alsamixer
+  
+  make sure your smpt email acount is okay to use, here I am using my qq email acount which request another password from email website settings
 
 2. Preparing before running
 
-  sudo apt-get install python3-pip
+  $sudo apt-get install python3-pip
   
-  sudo apt-get install python3-pyaudio
+  $sudo apt-get install python3-pyaudio
   
-  sudo apt-get install libatlas-base-dev
+  $sudo apt-get install libatlas-base-dev
   
-  pip3 install numpy
+  $pip3 install numpy
   
-  pip3 install aubio
+  $pip3 install aubio
   
 
 3. Running ppa,py at background
 
-  sudo nohup python3 ppa.py &
+  $sudo nohup python3 ppa.py &
