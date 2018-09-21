@@ -45,7 +45,8 @@
   
   $pip3 install aubio
   
+# Run ppa
 
-3. Running ppa,py at background
+  Running ppa,py at background, you can run with SSH 
 
   $sudo nohup python3 ppa.py &
