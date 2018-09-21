@@ -1,9 +1,10 @@
-# ppa
-Introduction:
+# ppa introduction:
 
   ppa (Piano Practice Assistant) is a simple sound detection tool, which is based on raspberrypi 2B for my daughter piano practice and task duration report. It's using aubio pitch detect and have some machine state to check pitch count and calculate moving average value for music play detect or task done checks.
 
-HW Installation:
+
+
+# HW installation:
 
   Raspberrypi 2 Model B - https://www.raspberrypi.org/
   
@@ -14,7 +15,9 @@ HW Installation:
   USB WIFI (optional) - https://www.amazon.com/Official-Raspberry-Pi-WiFi-dongle/dp/B014HTNO52/ref=sr_1_3?ie=UTF8&qid=1537542560&sr=8-3&keywords=raspberry+pi+usb+wifi
 
 
-SW Installation:
+
+
+# SW installation:
 
 1. Preparing Raspberry OS
 
