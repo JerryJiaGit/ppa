@@ -1,10 +1,10 @@
-# ppa introduction:
+# ppa introduction
 
-  ppa (Piano Practice Assistant) is a simple sound detection tool, which is based on raspberrypi 2B for my daughter piano practice and task duration report. It's using aubio pitch detect and have some machine state to check pitch count and calculate moving average value for music play detect or task done checks.
+  ppa (Piano Practice Assistant) is a simple sound detection tool, which is based on raspberrypi 2B for my daughter piano practice and task duration report. It's using aubio pitch detect and have some machine state to check pitch count and calculate moving average value for music play detect or task done checks. All music play monitor in full automation, after practice task done, it will send email report to your email. You can modify your smpt and reciver email address in the code by yourself. 
 
 
 
-# HW installation:
+# HW installation
 
   Raspberrypi 2 Model B - https://www.raspberrypi.org/
   
@@ -17,7 +17,7 @@
 
 
 
-# SW installation:
+# SW installation
 
 1. Preparing Raspberry OS
 
