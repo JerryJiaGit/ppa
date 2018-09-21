@@ -4,7 +4,7 @@
 
 
 
-# HW installation
+# hw installation
 
   Raspberrypi 2 Model B - https://www.raspberrypi.org/
   
@@ -17,7 +17,7 @@
 
 
 
-# SW installation
+# sw installation
 
 1. Preparing Raspberry OS
 
@@ -46,7 +46,7 @@
   
   $pip3 install aubio
   
-# Run ppa
+# run ppa
 
   Running ppa,py at background, you can run with SSH 
 
