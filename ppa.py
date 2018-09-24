@@ -14,7 +14,7 @@ from smtplib import SMTP_SSL
 
 CHUNK = 256
 FORMAT = pyaudio.paInt16 #some other sound card may need pyaudio.paFloat32
-DEVICE = 0 
+DEVICE = 2
 CHANNELS = 1
 RATE = 44100
 
