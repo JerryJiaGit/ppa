@@ -1,5 +1,6 @@
 # Oneday project from Jerry Jia for his daughter Hannah piano practice 
 # v0.1 21/9/2018 - init with pitch detection and email function 
+# v0.2 24/9/2018 - add print to file as record.csv, will add weekly summary later
 
 import pyaudio
 import wave
@@ -92,8 +93,12 @@ stream = p.open(format=FORMAT,
 
 print("* recording")
 
+
 # no need record sound, only for debug
 #frames = []
+
+# open record file as 'a'
+f = open("record.csv", "a") 
 
 # Pitch define
 tolerance = 0.8
@@ -202,10 +207,12 @@ while True:
             for m in range(0,lonsize): s_long.dequeue()
             for m in range(0,s_long_time):s_long.enqueue(1)
             #print("event segment end", time.asctime(time.localtime(segment_endtime)), "realplay duration",realplay_duration)
+            print("segment,",time.asctime(time.localtime(segment_starttime)),",",time.asctime(time.localtime(segment_endtime)),","+str(segment_endtime-segment_starttime),file=f)
         elif shortavg < musiconset_TH and midavg < play_TH and longavg < task_TH and task_status == 1:
             task_endtime = time.time()
             task_duration = task_endtime-task_starttime
             print ("Task done and sending mail:", time.asctime(time.localtime(task_starttime)),time.asctime(time.localtime(task_endtime)),task_duration,realplay_duration)
+            print("task,",time.asctime(time.localtime(task_starttime)),",",time.asctime(time.localtime(task_endtime)),","+str(task_duration),file=f)
             task_status = 0
             sendmail()
             task_duration = 0
