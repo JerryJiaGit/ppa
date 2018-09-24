@@ -44,12 +44,13 @@ class Queue:
 
 def sendmail():
         host_server = 'smtp.qq.com'
-        sender_qq = '18***' # change to your qq mail
-        pwd = 'pwd***' # mail password
-        sender_qq_mail = '18***@qq.com' # sending mail box
-        toEmails = ["jia***@gmail.com"] # email reciver list
-        mail_content = "One task done and sending summary: " + time.asctime(time.localtime(task_starttime)) + ", task=" + str(int(task_duration/60) + " min, " + "realplay=" + str(int(realplay_duration/60)) + " min."
-        mail_title = 'Piano Practice Report'
+        sender_qq = 'qq'
+        pwd = 'ppppp'
+        sender_qq_mail = '111@qq.com'
+        receiver = 'uuug@gmail.com'
+        toEmails = ["zzz@microsoft.com", "yyy@gmail.com", "xxx@outlook.com"]
+        mail_content = "One task done and sending summary: " + time.asctime(time.localtime(task_starttime)) + ", task=" + str(int(task_duration/60)) + " min, " + "realplay=" + str(int(realplay_duration/60)) + " min."
+        mail_title = 'Piano Practice Report - Hannah'
         smtp = SMTP_SSL(host_server)
         smtp.set_debuglevel(0)
         smtp.ehlo(host_server)
