@@ -51,3 +51,6 @@
   Running ppa,py at background, you can run with SSH 
 
   $sudo nohup python3 ppa.py &
+
+# check summary in record.csv
+  Segment or task, start time, end time, and duration record in csv format
