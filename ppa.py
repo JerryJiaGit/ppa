@@ -1,6 +1,7 @@
 # Oneday project from Jerry Jia for his daughter Hannah piano practice 
 # v0.1 21/9/2018 - init with pitch detection and email function 
 # v0.2 24/9/2018 - add print to file as record.csv, will add weekly summary later
+# v0.3 14/10/2018 - add try for email and file write to avoid unexpected network issue causing service broken
 
 import pyaudio
 import wave
@@ -208,18 +209,28 @@ while True:
             for m in range(0,lonsize): s_long.dequeue()
             for m in range(0,s_long_time):s_long.enqueue(1)
             #print("event segment end", time.asctime(time.localtime(segment_endtime)), "realplay duration",realplay_duration)
-            f = open("record.csv", "a") 
-            print("segment,",time.asctime(time.localtime(segment_starttime)),",",time.asctime(time.localtime(segment_endtime)),","+str(segment_endtime-segment_starttime),file=f)
-            f.close()
+            try:
+                f = open("record.csv", "a") 
+                print("segment,",time.asctime(time.localtime(segment_starttime)),",",time.asctime(time.localtime(segment_endtime)),","+str(segment_endtime-segment_starttime),file=f)
+                f.close()
+            except:
+                pass
         elif shortavg < musiconset_TH and midavg < play_TH and longavg < task_TH and task_status == 1:
             task_endtime = time.time()
             task_duration = task_endtime-task_starttime
             print ("Task done and sending mail:", time.asctime(time.localtime(task_starttime)),time.asctime(time.localtime(task_endtime)),task_duration,realplay_duration)
-            f = open("record.csv", "a") 
-            print("task,",time.asctime(time.localtime(task_starttime)),",",time.asctime(time.localtime(task_endtime)),","+str(task_duration),file=f)
-            f.close()
+            try:
+                f = open("record.csv", "a") 
+                print("task,",time.asctime(time.localtime(task_starttime)),",",time.asctime(time.localtime(task_endtime)),","+str(task_duration),file=f)
+                f.close()
+            except:
+                pass
+
             task_status = 0
-            sendmail()
+            try:
+                sendmail()
+            except:
+                pass
             task_duration = 0
             realplay_duration = 0
         else:
